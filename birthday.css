@@ -25,16 +25,31 @@ body {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     border: 1px solid white;
     position: relative;
     width: 50%;
-    height: 10%;
+    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+#button:hover {
+    transform: scale(1.1);
+}
+
+#button:hover p {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+    transition: font-size 0.4s ease;
 }
 
 @property --angle {
@@ -55,7 +70,29 @@ body {
     background-image: conic-gradient(from var(--angle), red, orange, yellow, green, blue, indigo, violet, red);
     position: absolute;
     z-index: -1;
+    transform: translateZ(-1px);
     animation: spin 5s linear infinite;
     inset: -10px;
-    border-radius: 5px;
+    border-radius: 15px;
+}
+
+#button:hover::after {
+    content: "";
+    box-shadow: 0 0 95px 0 rgba(255, 255, 255, 0.3);
+}
+
+#main-title {
+    font-size: 4rem;
+    top: 10vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+}
+
+hr {
+    width: 95%;
+    position: absolute;
+    top: 22vh;
 }
