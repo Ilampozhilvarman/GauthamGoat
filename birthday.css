@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    background-color: black;
+    color: white;
+    justify-content: center;
+}
+
+#button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    position: relative;
+    width: 50%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    to {
+        --angle: 360deg;
+    }
+}
+
+#button::after {
+    content: "";
+    display: block;
+    background-image: conic-gradient(from var(--angle), red, orange, yellow, green, blue, indigo, violet, red);
+    position: absolute;
+    z-index: -1;
+    animation: spin 5s linear infinite;
+    inset: -10px;
+    border-radius: 5px;
+}

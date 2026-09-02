@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    will-change: background-position;
 }
 
 @keyframes gradientMovement {
@@ -80,4 +81,41 @@ h1 {
 hr {
     width: 90%;
     border: 1px solid white;
+}
+
+p {
+    font-size: 32px;
+}
+
+#image-holder {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#image-holder img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.decoration {
+    position: fixed;
+    width: 80px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+    animation: decorationPop 3s ease forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes decorationPop {
+    0%   { opacity: 0; transform: scale(0) rotate(-10deg); }
+    15%  { opacity: 1; transform: scale(1.1) rotate(5deg); }
+    25%  { opacity: 1; transform: scale(1) rotate(0deg); }
+    85%  { opacity: 1; transform: scale(1) rotate(0deg); }
+    100% { opacity: 0; transform: scale(0.7) rotate(10deg); }
 }
