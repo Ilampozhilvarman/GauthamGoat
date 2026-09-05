@@ -4,6 +4,6 @@ This is for my friend **Gautham's** birthday!
 
 There is no code needed to run this website.
 
-Just go to <https://Ilampozhilvarman.github.io>
+Just go to <https://Ilampozhilvarman.github.io/GauthamGoat>
 
 ***Happy birthday Gautham!!!!***
